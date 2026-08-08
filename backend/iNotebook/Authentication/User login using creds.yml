@@ -1,16 +1,15 @@
 info:
-  name: Create a new User
+  name: User login using creds
   type: http
   seq: 1
 
 http:
   method: POST
-  url: http://localhost:5000/api/auth/createuser
+  url: http://localhost:5000/api/auth/login
   body:
     type: json
     data: |-
       {
-        "name": "Tom Holland",
         "email": "tom@gmail.com",
         "password": "tom@123holl"
       }
