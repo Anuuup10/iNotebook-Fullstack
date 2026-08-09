@@ -1,0 +1,21 @@
+info:
+  name: Get User Data
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:5000/api/auth/getuser
+  headers:
+    - name: auth-token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNmE3Njk0OTE5YzQ3ODNlYzU3N2FlM2VlIn0sImlhdCI6MTc4NjI0MzQ3M30.u9vvSWpqtLoGyn8vTOvCNnWQfws02_jrUc14jNgmGgg
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
