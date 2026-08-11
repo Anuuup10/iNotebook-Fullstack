@@ -1,0 +1,20 @@
+info:
+  name: Delete Note
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: http://localhost:5000/api/notes/deletenote/6a7940d386644dca193d7c13
+  headers:
+    - name: auth-token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNmE3Njk0OTE5YzQ3ODNlYzU3N2FlM2VlIn0sImlhdCI6MTc4NjI0MzQ3M30.u9vvSWpqtLoGyn8vTOvCNnWQfws02_jrUc14jNgmGgg
+    - name: content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
