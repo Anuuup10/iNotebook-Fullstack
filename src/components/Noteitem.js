@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
+import noteContext from "../context/notes/noteContext";
+
+// const Noteitem = (props) => {
+//   const context = useContext(noteContext);
+//   const { deleteNote } = context;
+//   const { note } = props;
+//   return (
+//     <div className="col-md-3">
+//       <div className="card my-3">
+//         <div className="card-body">
+//           <h5 className="card-title">{note.title}</h5>
+//           <p className="card-text">{note.description}</p>
+//           <i className="fa-solid fa-trash-can mx-2" onClick={()=>{deleteNote(note._id)}}></i>
+//           <i className="fa-regular fa-pen-to-square mx-2"></i>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Noteitem = (props) => {
+  const context = useContext(noteContext);
+  const { deleteNote } = context;
   const { note } = props;
+
   return (
-    <div className="col-md-3"> 
+    <div className="col-md-3">
       <div className="card my-3">
         <div className="card-body">
           <h5 className="card-title">{note.title}</h5>
           <p className="card-text">{note.description}</p>
-          <i className="fa-solid fa-trash-can mx-2"></i>
+
+          <button
+            type="button"
+            className="btn btn-link p-0"
+            onClick={() => deleteNote(note._id)}
+          >
+            <i className="fa-solid fa-trash-can"></i>
+          </button>
+
           <i className="fa-regular fa-pen-to-square mx-2"></i>
         </div>
       </div>
