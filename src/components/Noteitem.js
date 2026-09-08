@@ -22,7 +22,7 @@ import noteContext from "../context/notes/noteContext";
 const Noteitem = (props) => {
   const context = useContext(noteContext);
   const { deleteNote } = context;
-  const { note } = props;
+  const { note, updateNote } = props;
 
   return (
     <div className="col-md-3">
@@ -38,8 +38,14 @@ const Noteitem = (props) => {
           >
             <i className="fa-solid fa-trash-can"></i>
           </button>
-
-          <i className="fa-regular fa-pen-to-square mx-2"></i>
+          <button
+            type="button"
+            className="btn btn-link p-0"
+            onClick={() => updateNote(note)}
+          >
+            <i className="fa-regular fa-pen-to-square mx-2"></i>
+          </button>
+        
         </div>
       </div>
     </div>
